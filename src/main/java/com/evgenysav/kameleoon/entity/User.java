@@ -1,5 +1,6 @@
 package com.evgenysav.kameleoon.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,5 +37,6 @@ public class User {
     private Date dateOfCreation;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Quote> quotes;
 }
